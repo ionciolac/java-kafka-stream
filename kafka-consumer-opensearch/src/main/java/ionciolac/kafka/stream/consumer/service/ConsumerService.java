@@ -1,4 +1,4 @@
-package ionciolac.kafka.project.consumer.service;
+package ionciolac.kafka.stream.consumer.service;
 
 import com.google.gson.JsonParser;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -7,8 +7,8 @@ import org.opensearch.action.index.IndexRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static ionciolac.kafka.project.consumer.config.ConsumerConstants.OPEN_SEARCH_INDEX_NAME;
-import static ionciolac.kafka.project.consumer.config.ConsumerConstants.TOPIC;
+import static ionciolac.kafka.stream.consumer.config.ConsumerConstants.OPEN_SEARCH_INDEX_NAME;
+import static ionciolac.kafka.stream.consumer.config.ConsumerConstants.TOPIC;
 import static java.time.Duration.ofMillis;
 import static java.util.Collections.singleton;
 import static org.opensearch.common.xcontent.XContentType.JSON;

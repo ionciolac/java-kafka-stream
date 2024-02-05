@@ -1,4 +1,4 @@
-package ionciolac.kafka.project.consumer.config;
+package ionciolac.kafka.stream.consumer.config;
 
 public class ConsumerConstants {
 

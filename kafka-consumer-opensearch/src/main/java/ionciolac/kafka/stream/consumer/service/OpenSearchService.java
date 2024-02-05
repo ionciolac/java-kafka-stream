@@ -1,5 +1,6 @@
-package ionciolac.kafka.project.consumer.service;
+package ionciolac.kafka.stream.consumer.service;
 
+import ionciolac.kafka.stream.consumer.config.ConsumerConstants;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -16,8 +17,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URI;
 
-import static ionciolac.kafka.project.consumer.config.ConsumerConstants.OPEN_SEARCH_INDEX_NAME;
-import static ionciolac.kafka.project.consumer.config.ConsumerConstants.OPEN_SEARCH_URL;
 import static org.opensearch.client.RequestOptions.DEFAULT;
 
 public class OpenSearchService {
@@ -26,7 +25,7 @@ public class OpenSearchService {
 
     public RestHighLevelClient connectionToOpenSearch() {
         // we build a URI from the connection string
-        var connUri = URI.create(OPEN_SEARCH_URL);
+        var connUri = URI.create(ConsumerConstants.OPEN_SEARCH_URL);
         // extract login information if it exists
         var userInfo = connUri.getUserInfo();
         var host = connUri.getHost();
@@ -49,11 +48,11 @@ public class OpenSearchService {
     public void createIndex(RestHighLevelClient openSearchClient) {
         try {
             var indexExists = openSearchClient
-                    .indices().exists(new GetIndexRequest(OPEN_SEARCH_INDEX_NAME), DEFAULT);
+                    .indices().exists(new GetIndexRequest(ConsumerConstants.OPEN_SEARCH_INDEX_NAME), DEFAULT);
             if (indexExists) {
                 log.info("The Wikimedia Index already exits");
             } else {
-                var createIndexRequest = new CreateIndexRequest(OPEN_SEARCH_INDEX_NAME);
+                var createIndexRequest = new CreateIndexRequest(ConsumerConstants.OPEN_SEARCH_INDEX_NAME);
                 openSearchClient.indices().create(createIndexRequest, DEFAULT);
                 log.info("The Wikimedia Index has been created!");
             }

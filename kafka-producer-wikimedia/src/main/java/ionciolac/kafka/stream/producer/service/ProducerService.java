@@ -1,4 +1,4 @@
-package ionciolac.kafka.project.producer.service;
+package ionciolac.kafka.stream.producer.service;
 
 import com.launchdarkly.eventsource.EventSource;
 import com.launchdarkly.eventsource.MessageEvent;
@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 
-import static ionciolac.kafka.project.producer.config.ProducerConstants.TOPIC;
-import static ionciolac.kafka.project.producer.config.ProducerConstants.WIKIMEDIA_URL;
+import static ionciolac.kafka.stream.producer.config.ProducerConstants.TOPIC;
+import static ionciolac.kafka.stream.producer.config.ProducerConstants.WIKIMEDIA_URL;
 
 public class ProducerService {
 
