@@ -1,4 +1,4 @@
-package ionciolac.kafka.project.producer;
+package ionciolac.kafka.project.producer.service;
 
 import com.launchdarkly.eventsource.MessageEvent;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -7,7 +7,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 
-import static ionciolac.kafka.project.producer.ProducerConstants.BOOTSTRAP_SERVERS_URL;
+import static ionciolac.kafka.project.producer.config.ProducerConstants.BOOTSTRAP_SERVERS_URL;
 import static org.apache.kafka.clients.producer.ProducerConfig.*;
 
 public class KafkaProducerService {

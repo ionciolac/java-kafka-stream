@@ -1,4 +1,4 @@
-package ionciolac.kafka.project.producer;
+package ionciolac.kafka.project.producer.config;
 
 public class ProducerConstants {
 
