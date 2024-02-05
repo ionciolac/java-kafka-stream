@@ -1,4 +1,4 @@
-# kafka-project
+# java-kafka-stream
 # steps for run kafka-producer-wikimedia
 1. Install Kafka on your localhost
 2. Start Zookeeper using command "/usr/local/bin/zookeeper-server-start /usr/local/etc/zookeeper/zoo.cfg"
