@@ -23,9 +23,10 @@ public class ProducerService {
     }
 
     public void start() {
+        var kafkaProducer = kafkaProducerConfig.getKafkaProducer();
         var messages = downloadMessages();
         while (messages.iterator().hasNext()) {
-            messages.forEach(messageEvent -> sendMessage(kafkaProducerConfig.getKafkaProducer(), messageEvent));
+            messages.forEach(messageEvent -> sendMessage(kafkaProducer, messageEvent));
         }
     }
 
